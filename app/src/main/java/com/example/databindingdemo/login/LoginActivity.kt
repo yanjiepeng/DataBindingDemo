@@ -1,5 +1,6 @@
 package com.example.databindingdemo.login
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.databindingdemo.R
 import com.example.databindingdemo.databinding.ActivityLoginBinding
+import com.example.databindingdemo.list.ListActivity
 import com.example.databindingdemo.login.bean.UserBean
 
 class LoginActivity : AppCompatActivity() {
@@ -40,6 +42,8 @@ class LoginActivity : AppCompatActivity() {
         onClickListener = View.OnClickListener {
 
             Toast.makeText(this, "点击", Toast.LENGTH_LONG).show()
+
+            startActivity(Intent(this , ListActivity::class.java))
         }
 
         binding.click = onClickListener
