@@ -1,9 +1,12 @@
 package com.example.databindingdemo.list.entity
 
-data class UserBeanWithHeader(
+import androidx.databinding.ObservableField
 
-    var userName: String,
-    var userAge: String,
-    var headerUri: String
+class UserBeanWithHeader {
 
-)
+    var userName = ObservableField<String>()
+    var userAge = ObservableField<String>()
+    var headerUri = ObservableField<String>()
+}
+
+
