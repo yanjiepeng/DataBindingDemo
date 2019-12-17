@@ -1,9 +1,14 @@
 package com.example.databindingdemo.list.entity
 
-data class UserBean(
+import androidx.databinding.ObservableField
 
-    var userName: String,
-    var userAge: String
+class UserBean {
+
+    var userName = ObservableField<String>()
+    var userAge = ObservableField<String>()
 
 
-)
+}
+
+
+

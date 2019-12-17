@@ -21,7 +21,6 @@ class UserListAdapter : BaseAdapter<Any>() {
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
 
-
         if (holder.dataBinding is ItemUserTextBinding) {
             (holder.dataBinding as ItemUserTextBinding).user = data[position] as UserBean
         }
@@ -30,17 +29,12 @@ class UserListAdapter : BaseAdapter<Any>() {
             (holder.dataBinding as ItemUserImgBinding).user = data[position] as UserBeanWithHeader
             Glide.with(holder.itemView.context).load((data[position] as UserBeanWithHeader).headerUri)
                 .into((holder.dataBinding as ItemUserImgBinding).imageView)
-
         }
-
     }
 
     override fun getItemViewType(position: Int): Int {
-
         if (data[position] is UserBean) return R.layout.item_user_text
-
         if (data[position] is UserBeanWithHeader) return R.layout.item_user_img
-
         return R.layout.item_user_text
     }
 

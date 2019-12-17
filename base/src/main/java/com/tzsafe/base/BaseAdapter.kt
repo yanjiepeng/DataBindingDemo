@@ -1,6 +1,5 @@
 package com.tzsafe.base
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -45,7 +44,7 @@ abstract class BaseAdapter<T>( var data: MutableList<T> = mutableListOf()) :
 
     fun refreshDatabyDiffUtils(newData: MutableList<T>) {
 
-        var result: DiffUtil.DiffResult =
+        val result: DiffUtil.DiffResult =
             DiffUtil.calculateDiff(getDiffCllBack(this.data, newData), true)
         this.data = newData
         result.dispatchUpdatesTo(this)
