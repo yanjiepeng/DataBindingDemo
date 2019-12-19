@@ -27,7 +27,8 @@ class UserListAdapter : BaseAdapter<Any>() {
 
         if (holder.dataBinding is ItemUserImgBinding) {
             (holder.dataBinding as ItemUserImgBinding).user = data[position] as UserBeanWithHeader
-            Glide.with(holder.itemView.context).load((data[position] as UserBeanWithHeader).headerUri.get())
+            Glide.with(holder.itemView.context)
+                .load((data[position] as UserBeanWithHeader).headerUri.get())
                 .into((holder.dataBinding as ItemUserImgBinding).imageView)
         }
     }

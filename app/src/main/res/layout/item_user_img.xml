@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="user"
             type="com.example.databindingdemo.list.entity.UserBeanWithHeader" />
-
     </data>
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="100dp"
+        android:onClick="@{user::click}">
 
 
         <TextView
@@ -38,7 +37,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
-             />
+            android:contentDescription="image" />
     </RelativeLayout>
 
 </layout>

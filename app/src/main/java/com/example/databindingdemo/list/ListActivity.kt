@@ -36,7 +36,7 @@ class ListActivity : AppCompatActivity() {
         Handler(mainLooper).postDelayed({
 
             var user1 = adapter.data[1] as UserBeanWithHeader
-            user1.headerUri.set("https://tx-free-imgs.acfun.cn/content/2019_11_15/1.5737976079824154E9.png")
+            user1.userName.set("张三丰")
 
             var user4 = adapter.data[3] as UserBean
             user4.userName.set("张张张张张张张张")

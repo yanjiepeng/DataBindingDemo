@@ -10,6 +10,7 @@ import com.example.databindingdemo.R
 import com.example.databindingdemo.databinding.ActivityLoginBinding
 import com.example.databindingdemo.list.ListActivity
 import com.example.databindingdemo.login.bean.UserBean
+import com.example.databindingdemo.viewpager.ViewPagerActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -19,6 +20,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var list: List<String>
 
     var onClickListener: View.OnClickListener? = null
+    var onClickListener2: View.OnClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,12 +43,18 @@ class LoginActivity : AppCompatActivity() {
 
         onClickListener = View.OnClickListener {
 
-            Toast.makeText(this, "点击", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "点击", Toast.LENGTH_SHORT).show()
 
-            startActivity(Intent(this , ListActivity::class.java))
+            startActivity(Intent(this, ListActivity::class.java))
         }
 
         binding.click = onClickListener
+
+        onClickListener2 = View.OnClickListener {
+            startActivity(Intent(this, ViewPagerActivity::class.java))
+        }
+        binding.click2 = onClickListener2
+
 
     }
 }
