@@ -7,7 +7,8 @@
 
     <data>
 
-        <import type="java.util.List"/>
+        <import type="java.util.List" />
+
         <variable
             name="user"
             type="com.example.databindingdemo.login.bean.UserBean" />
@@ -20,7 +21,7 @@
         <variable
             name="list"
             type="List&lt;String>" />
-        
+
         <variable
             name="click"
             type="android.view.View.OnClickListener" />
@@ -29,6 +30,9 @@
             name="click2"
             type="android.view.View.OnClickListener" />
 
+        <variable
+            name="click3"
+            type="android.view.View.OnClickListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -65,8 +69,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="@{btnText}"
             android:onClick="@{click}"
+            android:text="@{btnText}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_password" />
@@ -91,5 +95,15 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="increase"
+            android:onClick="@{click3}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

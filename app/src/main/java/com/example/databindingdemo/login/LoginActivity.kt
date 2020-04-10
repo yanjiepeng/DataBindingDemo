@@ -21,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
     var onClickListener: View.OnClickListener? = null
     var onClickListener2: View.OnClickListener? = null
+    var onClickListener3: View.OnClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnText = btnText
 
-        list = listOf("123", "456", "String")
+        list = mutableListOf("123", "456", "String")
         binding.list = list
 
         onClickListener = View.OnClickListener {
@@ -53,7 +54,16 @@ class LoginActivity : AppCompatActivity() {
         onClickListener2 = View.OnClickListener {
             startActivity(Intent(this, ViewPagerActivity::class.java))
         }
+
         binding.click2 = onClickListener2
+
+        onClickListener3 = View.OnClickListener {
+
+            (list as MutableList<String>)[0] = (1 + list[0].toInt()).toString();
+            binding.list = list
+
+        }
+        binding.click3 = onClickListener3
 
 
     }
